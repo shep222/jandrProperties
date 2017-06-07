@@ -1,3 +1,5 @@
-.mainMap {
-    
+.listings {
+    display: block;
+    height: 500px;
+    overflow: scroll;
 }

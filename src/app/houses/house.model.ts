@@ -1,4 +1,5 @@
 export class House {
+    public id: number;
     public address: string;
     public city: string;
     public state: string;
@@ -6,11 +7,12 @@ export class House {
     public bedrooms: number;
     public baths: number;
     public description: string;
-    public imageURL: string
+    public imageURL: string;
+    public price: number;
 
-    constructor(address: string, city: string, state: string, zipcode: string,
-    bedrooms: number, baths: number, description: string, imageURL: string ){
-
+    constructor(id: number, address: string, city: string, state: string, zipcode: string,
+    bedrooms: number, baths: number, description: string, imageURL: string, price: number ){
+        this.id = id;
         this.address = address;
         this.city = city;
         this.state = state;
@@ -19,5 +21,6 @@ export class House {
         this.baths = baths;
         this.description = description;
         this.imageURL = imageURL;
+        this.price = price
     }
 }
