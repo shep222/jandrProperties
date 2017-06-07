@@ -1,0 +1,12 @@
+<a href="#" class="list-group-item clearfix"
+    (click)="onSelected()">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading"> {{ house.address }} </h4>
+    <h4> {{house.city}}, {{house.state}}  {{house.zipcode}}</h4>
+    <p> {{house.bedrooms}} Bedroom / {{house.baths}} baths</p>
+  </div>
+  <span class="pull-right">
+        <img src="{{ house.imageURL }}" alt="" class="img-responsive">
+    </span>
+    <!-- <p class="list-group-item-text"> {{ house.description }}</p> -->
+</a>
