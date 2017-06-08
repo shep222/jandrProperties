@@ -6,12 +6,14 @@ import { House } from "../house.model";
   styleUrls: ['./house-detail.component.css']
 })
 export class HouseDetailComponent implements OnInit {
-    @Input() house: House;
-    @Output() houseSelected = new EventEmitter<void>();
+    house: House;
+
     lat: number = 30.6954;
     lng: number = -88.0399;
 
-  constructor() { }
+  constructor() {
+    this.house = new House(1, '9411 Smokewood Dr', 'Mobile', 'AL', '36695', 3, 1, "My House", 'https://s3-us-west-1.amazonaws.com/realestate222/house1.jpg', 1800)
+  }
 
   ngOnInit() {
   }

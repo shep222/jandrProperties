@@ -14,10 +14,10 @@ import { HouseItemComponent } from './houses/house-list/house-item/house-item.co
 import { HouseDetailComponent } from './houses/house-detail/house-detail.component';
 
 const appRoutes: Routes = [
-    // { path: '' , component: HomeComponent },
-    { path: 'houses' , component: HousesComponent },
-    // { path: '' , component: HomeComponent },
-    { path: 'application' , component: ApplicationComponent }
+  { path: '', component: HousesComponent },
+  { path: 'houses', component: HousesComponent },
+  { path: 'houses/:id', component: HouseDetailComponent },
+  { path: 'application', component: ApplicationComponent }
 
 ]
 
@@ -38,7 +38,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB80lk-p0362dX5fM2wVXLUo09m87vLe4Y'
-  }),
+    }),
     HttpModule
   ],
   providers: [],

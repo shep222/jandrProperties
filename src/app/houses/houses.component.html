@@ -1,4 +1,4 @@
-<div *ngIf="!hideMe" class="row">
+<div class="row">
     <div class="col-md-6">
         <app-house-list
         class="listings"
@@ -9,12 +9,4 @@
           <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
         </sebm-google-map>
     </div>
-</div>
-
-
-<div *ngIf="hideMe" class="col-md-12">
-<app-house-detail
-*ngIf="seletedHouse; else infoText"
-[house]="seletedHouse"></app-house-detail>
-<ng-template #infoText>HERE<p></p></ng-template>
 </div>

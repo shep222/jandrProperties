@@ -6,11 +6,5 @@ import { House } from './houses/house.model'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  loadedFeature = 'houses';
-  @Input() house: House;
 
-
-  onNavigate(feature: string){
-      this.loadedFeature = feature;
-  }
 }

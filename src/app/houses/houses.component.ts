@@ -6,9 +6,7 @@ import { House } from './house.model'
   styleUrls: ['./houses.component.css']
 })
 export class HousesComponent implements OnInit {
-    selectedHouse: House;
-    hideMe = false;
-
+    
         lat: number = 30.6954;
         lng: number = -88.0399;
   constructor() { }
