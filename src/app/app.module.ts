@@ -12,7 +12,8 @@ import { ApplicationComponent } from './application/application.component';
 import { HouseListComponent } from './houses/house-list/house-list.component';
 import { HouseItemComponent } from './houses/house-list/house-item/house-item.component';
 import { HouseDetailComponent } from './houses/house-detail/house-detail.component';
-
+import { HouseService } from './houses/house.service';
+import { HouseDataService } from './houses/houseData-service';
 const appRoutes: Routes = [
   { path: '', component: HousesComponent },
   { path: 'houses', component: HousesComponent },
@@ -41,7 +42,7 @@ const appRoutes: Routes = [
     }),
     HttpModule
   ],
-  providers: [],
+  providers: [HouseService, HouseDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
