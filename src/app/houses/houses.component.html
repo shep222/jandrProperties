@@ -1,12 +1,28 @@
 <div class="row">
-    <div class="col-md-6">
-        <app-house-list
-        class="listings"
-        (houseWasSelected)="seletedHouse = $event"></app-house-list>
-    </div>
-    <div class="fixed-top col-md-6">
-        <sebm-google-map [latitude]="lat" [longitude]="lng" class="mainMap">
-          <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
-        </sebm-google-map>
-    </div>
+  <div class="col-md-6">
+    <app-house-list class="listings" (houseWasSelected)="seletedHouse = $event"></app-house-list>
+  </div>
+  <div class="fixed-top col-md-6">
+    <div class="map">
+
+
+    <sebm-google-map
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="zoom"
+    [disableDefaultUI]=false
+    [zoomControl]="false"
+     class="mainMap">
+      <sebm-google-map-marker
+      *ngFor="let m of markers; let i = index"
+      (markerClick)="clickedMarker(m, i)"
+      [latitude]="m.lat"
+      [longitude]="m.lng">
+        <sebm-google-map-info-window>
+            <strong> {{ m.name }}</strong>
+        </sebm-google-map-info-window>
+      </sebm-google-map-marker>
+    </sebm-google-map>
+  </div>
+  </div>
 </div>

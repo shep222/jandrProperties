@@ -1,13 +1,33 @@
 <div class="row">
-    <div class="col-md-8">
+  <div class="col-md-8">
+    <img class="detailImg" src="{{house.imageURL}}" alt="">
     <h4 class=""> {{ house.address }} </h4>
     <h4> {{house.city}}, {{house.state}}  {{house.zipcode}}</h4>
     <p> {{house.bedrooms}} Bedroom / {{house.baths}} baths</p>
-    </div>
-    <div class="fixed-top col-md-4">
-        <sebm-google-map [latitude]="lat" [longitude]="lng" class="mainMap">
-          <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
-        </sebm-google-map>
-    </div>
+    <p> {{ house.description }}</p>
+  </div>
+  <div class="fixed-top col-md-4">
+    <div class="map">
+
+
+    <sebm-google-map
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="zoom"
+    [disableDefaultUI]=false
+    [zoomControl]="false"
+     class="mainMap">
+      <sebm-google-map-marker
+      *ngFor="let m of markers; let i = index"
+      (markerClick)="clickedMarker(m, i)"
+      [latitude]="m.lat"
+      [longitude]="m.lng">
+        <sebm-google-map-info-window>
+            <strong> {{ m.name }}</strong>
+        </sebm-google-map-info-window>
+      </sebm-google-map-marker>
+    </sebm-google-map>
+  </div>
+  </div>
 </div>
 <button class="btn btn-primary" routerLink="/" type="button" name="button">Back to All Houses</button>

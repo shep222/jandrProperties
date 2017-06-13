@@ -12,8 +12,16 @@ import { HouseService } from '../house.service'
 export class HouseDetailComponent implements OnInit {
     id:{id: number}
     house: House;
-    lat: number = 30.6954;
-    lng: number = -88.0399;
+    zoom: number = 13;
+    lat: number = 30.669542;
+    lng: number = -88.26421;
+    markers: marker[] = [
+        {
+            name:'9411 Smokewood Dr',
+            lng: -88.26421 ,
+            lat: 30.669542
+        }
+    ]
 
 
   constructor(private route: ActivatedRoute, private houseService: HouseService) {
@@ -29,4 +37,9 @@ export class HouseDetailComponent implements OnInit {
   }
 
 
+}
+interface marker {
+    name?: string;
+    lat: number;
+    lng: number;
 }
