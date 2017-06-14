@@ -6,8 +6,9 @@
 <hr> -->
 
   <div class="row">
+      <h1></h1>
     <div class="col-xs-12">
-      <app-house-item *ngFor="let house of houses" [house]="house" routerLink="/houses/{{ house.id }}"></app-house-item>
+      <app-house-item *ngFor="let house of houses" [house]="house" [routerLink]="'/houses/' + house.id"></app-house-item>
     </div>
 
   </div>

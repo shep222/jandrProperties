@@ -1,39 +1,38 @@
 import { Injectable } from '@angular/core'
-import { House } from './house.model';
 import { Http, Response } from '@angular/http'
-
+import { House } from './house.model';
+import 'rxjs/add/operator/toPromise';
 import { HouseDataService } from './houseData-service'
 @Injectable()
 export class HouseService {
-    constructor(private houseDataService: HouseDataService){
-        this.houseDataService.getAllHouses()
-        .subscribe(
-            (response: Response)=> {
-                const houses: House[] = response.json()
-                // console.log(this.houses=houses)
-                for (var j = 0; j< houses.length; j++){
-                    // console.log(houses[j])
-                    this.houses.push(houses[j])
-                }
+    private headers = new Headers({'Content-Type': 'application/json'});
+    private houseUrl = 'https://realestate-rentals.herokuapp.com/house'
 
-            }
-        )
+    constructor(private http: Http, private houseDataService: HouseDataService){}
+
+    getHouses(): Promise<House[]> {
+        return this.http.get(this.houseUrl)
+            .toPromise()
+            .then(response => response.json() as House [])
+            .catch(this.handleError)
     }
-        houses: House[]= [
-            new House(1, '9411 Smokewood Dr', 'Mobile', 'AL', '36695', 3, 1,
-             "This is a lovely home located on a corner lot in the Baker High School District. It has a fenced in back yard and a two car garage.  Washer and Dryer hookups.",
-             'https://s3-us-west-1.amazonaws.com/realestate222/house1.jpg', 1800),
-            new House(2, '824 Lisa Ct', 'Mobile', 'AL', '36695', 4, 2, "Not My House", 'https://s3-us-west-1.amazonaws.com/realestate222/house2.jpg', 550),
-            new House(3, '9609 Royalwoods Dr E', 'Mobile', 'AL', '36608', 2, 1, "JoMommas House", 'https://s3-us-west-1.amazonaws.com/realestate222/house3.jpg', 725),
-            new House(4, '710 Wilshire Ln', 'Mobile', 'AL', '36609', 2, 1, "JoMommas House", 'https://s3-us-west-1.amazonaws.com/realestate222/house4.jpg', 499),
-            new House(5, '9660 Royalwoods Dr N.', 'Mobile', 'AL', '36608', 2, 1, "JoMommas House", 'https://s3-us-west-1.amazonaws.com/realestate222/house5.jpg', 983),
-            new House(6, '8571 Ashley Dr', 'Eight Mile', 'AL', '36571', 2, 1, "JoMommas House", 'https://s3-us-west-1.amazonaws.com/realestate222/house6.png', 1025),
-            new House(7, '959 Kenny St', 'Mobile', 'AL', '36606', 2, 1, "JoMommas House", 'https://s3-us-west-1.amazonaws.com/realestate222/house7.jpg', 1150),
-        ]
 
-        getHouses(){
-            return this.houses.slice()
-        }
+    getHouse(id:number): Promise<House> {
+        const url = `${this.houseUrl}/${id}`;
+        return this.http.get(url)
+        .toPromise()
+        .then(response => response.json() as House)
+        .catch(this.handleError)
+    }
+
+    private handleError(error: any): Promise<any> {
+        console.error('An error occured', error)
+        return Promise.reject(error.message || error)
+    }
+
+
+
+        houses: House[]= []
 
         getSingleHouse(houseId):House{
             for(var i = 0; i < this.houses.length; i++){
@@ -41,7 +40,7 @@ export class HouseService {
                     return this.houses[i]
                 }
             }
-            // return this.houses[houseId]
-            // console.log(houseId)
+            console.log(houseId)
+            return this.houses[houseId]
         }
 }

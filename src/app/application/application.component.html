@@ -1,34 +1,132 @@
 <h1>Rental Application</h1>
 
-<form class="" action="index.html" method="post">
-  <div class="">
-    <label for="">Rental Property address</label>
-    <input type="text" name="" value="">
-  </div>
-  <div class="">
-      <label for="">Desired Date of Occupancy</label>
-      <input type="text" name="" value="">
-  </div>
-  <div class="">
-    <label for="">Applicant's Name</label>
-    <input type="text" name="" value="">
-    <label for="">SSN#</label>
-    <input type="text" name="" value="">
-  </div>
-  <div class="">
-      <label for="">Present Address</label>
-      <input type="text" placeholder="Street" name="" value="">
-      <input type="text" placeholder="City" name="" value="">
-      <input type="text" placeholder="State" name="" value="">
-  </div>
-  <div class="">
-      <label for="">Telephone Number</label>
-      <input type="text" placeholder="Home" name="" value="">
-      <input type="text" placeholder="Work" name="" value="">
+<form class="myForm" action="index.html" method="post">
+  <div class="" id="user-data">
 
-  </div>
 
-<div class="">
-    <input class="btn btn-primary" type="submit" name="" value="Submit">
+    <div class="form-group">
+      <div class="">
+        <label for="">Rental Property address</label>
+        <input type="text" name="" value="">
+      </div>
+      <div class="">
+        <label for="">Desired Date of Occupancy</label>
+        <input type="text" name="" value="">
+      </div>
+    </div>
+
+    <div class="form-group">
+
+      <div class="">
+        <label for="">Applicant's Name</label>
+        <input type="text" name="name" ngModel>
+        <label for="">SSN#</label>
+        <input type="text" name="ssn" NgModule>
+      </div>
+      <div class="">
+        <label for="">Present Address</label>
+        <input type="text" placeholder="Street" name="" value="">
+        <input type="text" placeholder="City" name="" value="">
+        <input type="text" placeholder="State" name="" value="">
+      </div>
+      <div class="">
+        <label for="">Telephone Number</label>
+        <input type="text" placeholder="Home" name="" value="">
+        <input type="text" placeholder="Work" name="" value="">
+      </div>
+      <div class="">
+        <label for="">Date of Birth</label>
+        <input type="text" placeholder="Home" name="" value="">
+      </div>
+      <div class="">
+        <label for="">Marital Status</label>
+        <select class="" name="">
+            <option value="Single">Single</option>
+            <option value="Divorced">Divorced</option>
+            <option value="Seperated">Seperated</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <h4>List other Persons that will Ocuppy House:</h4>
+
+      <div class="">
+        <label for="">Name</label>
+        <input type="text" name="" value="">
+        <label for="">Relationship</label>
+        <input type="text" name="" value="">
+        <label for="">SSN#</label>
+        <input type="text" name="" value="">
+      </div>
+      <div class="">
+        <label for="">Name</label>
+        <input type="text" name="" value="">
+        <label for="">Relationship</label>
+        <input type="text" name="" value="">
+        <label for="">SSN#</label>
+        <input type="text" name="" value="">
+      </div>
+      <div class="">
+        <label for="">Name</label>
+        <input type="text" name="" value="">
+        <label for="">Relationship</label>
+        <input type="text" name="" value="">
+        <label for="">SSN#</label>
+        <input type="text" name="" value="">
+      </div>
+      <div class="">
+        <label for="">Name</label>
+        <input type="text" name="" value="">
+        <label for="">Relationship</label>
+        <input type="text" name="" value="">
+        <label for="">SSN#</label>
+        <input type="text" name="" value="">
+      </div>
+      <div class="form-group">
+        <h4>Applicants Current Employer</h4>
+
+        <div class="">
+          <label for="">Name</label>
+          <input type="text" name="" value="">
+          <label for="">Phone</label>
+          <input type="text" name="" value="">
+        </div>
+        <div class="">
+          <label for="">Address</label>
+          <input type="text" name="" value="">
+        </div>
+        <div class="">
+          <label for="">Nature of Business</label>
+          <input type="text" name="" value="">
+          <label for="">Your Position</label>
+          <input type="text" name="" value="">
+        </div>
+        <div class="">
+          <label for="">Length of Employment</label>
+          <input type="text" name="" value="">
+          <label for="">Monthly Income</label>
+          <input type="text" name="" value="">
+        </div>
+        <div class="">
+          <label for="">Other Income Source</label>
+          <input type="text" name="" value="">
+          <label for="">Amount</label>
+          <input type="text" name="" value="">
+        </div>
+
+
+      </div>
+
+      <p>THE ABOVE INFORMATION IS CORRECT TO THE BEST OF MY KNOWLEDGE AND I UNDERSTAND THAT ANY FALSE INFORMATION WILL DISQUALIFY THIS APPLICATION AND I WILL FORFEIT ALL DEPOSITS.  IT IS UNDERSTOOD THAT THE ABOVE INFORMATION WILL BE HELD STRICTLY CONFIDENTIAL.  I AUTHORIZE LESSOR, TO VERIFY THE INFORMATION PROVIDED IN THIS APPLICATION BY MAKING THE FOLLOWING INQUIRIES:  1) VERIFICATION OF WAGES AND SALARY INFORMATION, 2) VERIFICATION OF PREVIOUS PLACES OF RESIDENCE, INCLUDING PAYMENT HISTORY AND ANY OTHER PERTINENT INFORMATION, 3) A CURRENT CREDIT INQUIRY THROUGH THE CREDIT BUREAU AND/OR OTHER REFERENCE LISTED ON THE APPLICATION.  I UNDERSTAND THAT IF THE INFORMATION RECEIVED FROM THE ABOVE LISTED INQUIRIES DOES NOT FALL WITHIN THE GUIDELINES OF THE RENTAL PROCEDURES AND RENT CRITERIA AS ESTABLISHED BY THE LESSOR THAT MY APPLICATION MAY BE DENIED.
+
+APPLICANT ACKNOWLEDGES THAT IN THE EVENT APPLICANT IS APPROVED BY LESSOR AND APPLICANT TENDERS THE REQUIRED DAMAGE DEPOSIT, APPLICANT SHALL FORFEIT THE ENTIRE DAMAGE DEPOSIT AND LESSOR SHALL RETAIN THE DAMAGE DEPOSIT AS LIQUIDATED DAMAGES IF APPLICANT DOES NOT ENTER INTO LEASE AGREEMENT FOR WHATEVER REASON
+</p>
+
+
+      <div class="">
+        <input class="btn btn-primary" type="submit" name="" value="Submit">
+      </div>
+    </div>
 </div>
 </form>

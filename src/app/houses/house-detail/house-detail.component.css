@@ -1,8 +1,63 @@
 .sebm-google-map-container {
-  height: 300px;
-  width: 300px;
+  height: 150px;
+  width: 150px;
+  float: left;
+  margin-right: 4px;
+}
+.imagesArea {
+        margin-bottom: 20px;
 }
 
 .detailImg {
     max-height: 300px;
+}
+.mainImage {
+    float: left;
+    margin-right: 4px;
+}
+
+.extraImg {
+    height: 150px;
+    width: 150px;
+}
+
+.realtorImg {
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.contactForm {
+    width: 100%;
+    background-color: rgb(245, 245, 245);
+    padding-top: 10px;
+}
+
+.formHeader {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.formInput {
+    width: 96%;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-bottom: 10px;
+}
+
+.messageInput {
+    width: 96%;
+    height: 50px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-bottom: 10px;
+
+}
+
+.contactBtn {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
 }

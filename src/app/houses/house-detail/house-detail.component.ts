@@ -1,14 +1,17 @@
+import 'rxjs/add/operator/switchMap'
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { House } from "../house.model";
-import { ActivatedRoute} from '@angular/router';
+import { ActivatedRoute, Params} from '@angular/router';
+import { Location } from '@angular/common'
 import { HouseService } from '../house.service'
+
 @Component({
   selector: 'app-house-detail',
   templateUrl: './house-detail.component.html',
   styleUrls: ['./house-detail.component.css'],
   providers: [HouseService]
-
 })
+
 export class HouseDetailComponent implements OnInit {
     id:{id: number}
     house: House;
@@ -17,22 +20,25 @@ export class HouseDetailComponent implements OnInit {
     lng: number = -88.26421;
     markers: marker[] = [
         {
-            name:'9411 Smokewood Dr',
             lng: -88.26421 ,
             lat: 30.669542
         }
     ]
 
 
-  constructor(private route: ActivatedRoute, private houseService: HouseService) {
-
+  constructor(private route: ActivatedRoute,
+      private houseService: HouseService, private location: Location) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    //   this.route.params
+    //   .switchMap((params: Params) => this.houseService.getHouse(+params['id']))
+
       this.id = {
           id: this.route.snapshot.params['id']
       }
-      this.house = this.houseService.getSingleHouse(this.id)
+      this.houseService.getHouse(this.id.id)
+        .then(house => this.house = house[0])
 
   }
 

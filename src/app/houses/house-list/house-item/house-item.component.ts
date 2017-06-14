@@ -15,7 +15,7 @@ export class HouseItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  // onSelected(){
-  //       this.houseSelected.emit();
-  //   }
+  onSelected(){
+        this.houseSelected.emit();
+    }
 }

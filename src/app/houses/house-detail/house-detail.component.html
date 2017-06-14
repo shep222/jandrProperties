@@ -1,33 +1,49 @@
-<div class="row">
-  <div class="col-md-8">
+<div class="imagesArea">
+  <div class="mainImage">
     <img class="detailImg" src="{{house.imageURL}}" alt="">
-    <h4 class=""> {{ house.address }} </h4>
-    <h4> {{house.city}}, {{house.state}}  {{house.zipcode}}</h4>
-    <p> {{house.bedrooms}} Bedroom / {{house.baths}} baths</p>
-    <p> {{ house.description }}</p>
   </div>
-  <div class="fixed-top col-md-4">
-    <div class="map">
-
-
-    <sebm-google-map
-    [latitude]="lat"
-    [longitude]="lng"
-    [zoom]="zoom"
-    [disableDefaultUI]=false
-    [zoomControl]="false"
-     class="mainMap">
-      <sebm-google-map-marker
-      *ngFor="let m of markers; let i = index"
-      (markerClick)="clickedMarker(m, i)"
-      [latitude]="m.lat"
-      [longitude]="m.lng">
+  <div class="moreImages">
+    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false" class="mainMap">
+      <sebm-google-map-marker *ngFor="let m of markers; let i = index" [latitude]="m.lat" [longitude]="m.lng">
         <sebm-google-map-info-window>
-            <strong> {{ m.name }}</strong>
+          <!-- <strong> {{ house.address }}</strong> -->
         </sebm-google-map-info-window>
       </sebm-google-map-marker>
     </sebm-google-map>
-  </div>
+    <img class="extraImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2ZPxKo8g1Fmg0yaDlWSqLAZWyzGjw4xzgfcSJExYlGQxznmRe" alt="">
+    <img class="extraImg" src="https://st.hzcdn.com/fimgs/1ab16f760122f5ad_2090-w500-h400-b0-p0--.jpg" alt="">
+    <img class="extraImg" src="https://kingfisher.scene7.com/is/image/Kingfisher/Caldaro_Bathroom_V1?crop=30,184,4956,3269&anchor=2508,1818&" alt="">
+    <img class="extraImg" src="https://st.hzcdn.com/fimgs/d1f1b1c103e2a171_7680-w500-h400-b0-p0--traditional-kitchen.jpg" alt="">
+    <img class="extraImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQmhxSw80qWqFSy5I4QZoMDwJTMnPdBFwuc7WhSKMcdykvcAkPLA" alt="">
   </div>
 </div>
+<div class="row">
+  <div class="col-md-8">
+    <h1 class=""> {{ house.address }} </h1>
+    <h2> {{house.city}}, {{house.state}}  {{house.zipcode}}</h2>
+    <h3> {{house.bedrooms}} Bedroom / {{house.baths}} baths</h3>
+    <p> {{ house.description }}</p>
+  </div>
+
+
+  <div class="col-md-4">
+    <form class="contactForm" action="index.html" method="post">
+      <h6 class="formHeader">Contact Agent</h6>
+      <img class="realtorImg" src="https://s3-us-west-1.amazonaws.com/realestate222/Jason.png" alt="">
+      <h4>Jason Brannon</h4>
+      <h4>251-555-1212</h4>
+      <div class="">
+          <input class="formInput" type="text" placeholder="Your Name" name="" value="">
+          <input class="formInput" type="text" placeholder="Phone" name="" value="">
+          <input class="formInput" type="text" placeholder="Email" name="" value="">
+          <input class="messageInput" type="textarea" placeholder="Message" name="" value="">
+      </div>
+
+      <div class="contactBtn">
+        <input class="btn btn-primary" type="submit" name="" value="Submit">
+      </div>
+    </form>
+  </div>
+</div>
+
 <button class="btn btn-primary" routerLink="/" type="button" name="button">Back to All Houses</button>

@@ -1,0 +1,18 @@
+.myForm {
+
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 40px;
+    background-color: rgb(245, 245, 245);
+    padding: 40px;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+p {
+    color: red;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}

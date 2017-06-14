@@ -9,9 +9,10 @@ export class House {
     public description: string;
     public imageURL: string;
     public price: number;
+    public available: string;
 
     constructor(id: number, address: string, city: string, state: string, zipcode: string,
-    bedrooms: number, baths: number, description: string, imageURL: string, price: number ){
+    bedrooms: number, baths: number, description: string, imageURL: string, price: number, available: string ){
         this.id = id;
         this.address = address;
         this.city = city;
@@ -21,6 +22,7 @@ export class House {
         this.baths = baths;
         this.description = description;
         this.imageURL = imageURL;
-        this.price = price
+        this.price = price;
+        this.available = available
     }
 }
